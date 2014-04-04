@@ -1,0 +1,151 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #1D2939;
+}
+
+.pane {
+  max-width: 500px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+  
+.form-signin {
+  max-width: 300px;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+.form-signin textarea {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+
+.form-signin select {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+
+.js-pretty-upload-block input {
+  width: 175px;
+  padding: 4px !important;
+  margin-bottom: 5px;
+}
+
+.js-pretty-upload-block label {
+  display: block;
+  color: #999;
+}
+
+.js-pretty-upload-upload {
+  display: none !important;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+}
+
+.js-async-form {
+  position: relative;
+}
+
+.js-async-form .js-async-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.js-async-loader i {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  margin-top: 50%;
+}
+
+.app.app-messages {
+  width: 360px;
+  margin: 0 auto;
+}
+
+.app.app-messages .message {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 5px;
+}
+
+.app.app-messages .message i {
+  margin: 10px;
+}
+
+.app.app-messages .message span {
+  padding: 7px;
+  display: inline-block;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+
+.app.app-messages .message.success {
+  background-color: #87C060;
+}
+
+.app.app-messages .message.error {
+  background-color: #e03c52;
+}
+
+.app.app-messages .message.warning {
+  background-color: #f0ad4e;
+}
+
+.app.app-messages .message.info {
+  background-color: #6ECAF5;
+}
+
+
+.ticket-detail {
+  list-style-type: none;
+  margin: 0;
+}
+
+.ticket-detail li {
+  line-height: 15px;
+  font-size: 12px;
+}
+
+.ticket-detail .title {
+  font-size: 25px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #0F0F0F;
+  padding-bottom: 15px;
+}
+
+.ticket-detail .desc {
+  font-size: 12px;
+  color: #7E7E7E;
+  margin-bottom: 10px;
+}

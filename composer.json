@@ -1,0 +1,21 @@
+{
+    "name": "root/ctba_soporte",
+    "description": "Sistema de soporte y tickets para el CTBA",
+    "require": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Rebolini Pablo",
+            "email": "rebolini.pablo@gmail.com"
+        }
+    ],
+    "autoload": {
+      "classmap": [
+        "class/", "config/"
+      ]
+    },
+
+    "minimum-stability": "dev"
+}

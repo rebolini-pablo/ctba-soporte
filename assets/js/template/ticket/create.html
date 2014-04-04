@@ -1,0 +1,38 @@
+<div class="container">
+  <form class="pane form-signin form-inline js-async-form" method="post" >
+    <h2 class="form-signin-heading"></h2>
+    <textarea name="description" class="input-block-level" rows="10" placeholder="Descripción"></textarea>
+
+    <select name="system_id" id="" class="input-block-level">
+      <option value="">--- Sistema ---</option>
+      <option value="1">Ctba Site</option>
+      <option value="2">A.A.R v2</option>
+      <option value="3">Otro</option>
+    </select>
+   
+    <select name="module_id" id="" class="input-block-level">
+      <option value="">--- Modulo ---</option>
+      <option value="1">Programación</option>
+      <option value="2">Estaticos - IEF</option>
+      <option value="3">Documentos</option>
+      <option value="4">Otro</option>
+    </select>
+
+    <div class="input-prepend input-append js-pretty-upload-block">
+      <label>Captura de pantalla</label>
+      <span class="add-on"><i class="icon-picture"></i></span>
+      <input type="text" readonly="readonly"><button class="btn js-PrettyUpload-fire" type="button">Seleccionar</button>
+      <input type="file" name="screenshot" class="js-pretty-upload-upload">
+    </div>
+
+    <label class="checkbox">
+      <input type="checkbox" name="copyme"> Enviar una copia a mi correo
+    </label>
+
+    <button class="btn btn-success js-async-form-submit" type="submit">
+      Enviar Ticket
+    </button>
+
+    <label>&nbsp;</label>
+  </form>
+</div>
