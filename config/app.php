@@ -5,7 +5,7 @@
    */
   return array(
     'app' => array(
-      'url' => 'http://ctba-soporte.local:8081/',
+      'url' => 'http://ctba-soporte.hermeneutica.org/',
       'upload_dir' => __DIR__ . '/../uploads/'
     )
   );

@@ -1,6 +1,7 @@
 <?php
   
   class Ticket extends TicketDAO {
+    protected $model = 'Ticket';
     protected $table = 'tickets';
     
     public $id = null;

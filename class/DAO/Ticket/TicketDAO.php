@@ -11,9 +11,12 @@ class TicketDAO extends BaseDAO {
         )
       );
 
-      if (! isset($this->table))
-        throw new RunTimeException("Missing property: $table");
+
         
+    }
+
+    public function all() {
+      return $this->getAll();
     }
 
     public function find($id) {
@@ -22,5 +25,15 @@ class TicketDAO extends BaseDAO {
 
     public function create () {
       return $this->insert($this);
-    }  
+    }
+
+    public function save() {
+      // If id is defined then update
+      if ($this->id !== null) {
+        return $this->update($this);
+      }
+
+      // else insert it...
+      return $this->insert($this);
+    }
 }

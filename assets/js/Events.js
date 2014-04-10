@@ -1,4 +1,4 @@
-define("Events", ["jquery", "Helper"], function (jQuery, Helper) {
+define("Events", ["jquery", "Helper", "Message"], function (jQuery, Helper, Message) {
   function Events () {
 
   }
@@ -32,7 +32,37 @@ define("Events", ["jquery", "Helper"], function (jQuery, Helper) {
       $message.slideUp(function(){
         $message.remove()
       });
+    });
 
+    // Resolve ticket button
+    // @todo Tratar como un form-async
+    jQuery('.js-resolve-ticket').on('click', function (event) {
+      event.preventDefault();
+
+      if (confirm('Esta accion marcara el ticket seleccionado como: Resuelto')) {
+        var id = jQuery(this).attr('data-id');
+        var promise = $.post(_base_url + '/ticket/close', {id: id});
+
+        promise.done(function (data) {
+          var status = data.status
+          ,   message = null;
+
+          if (data.hasOwnProperty('message'))
+            message = data.message;
+
+          if (Message.hasOwnProperty(status))
+            Message[status](message);
+
+          if (status === "success") {
+            setTimeout(function () {
+              document.location.reload();
+            }, 2000);
+          }
+
+        });
+      }
+
+      return;
     });
   };
 

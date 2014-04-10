@@ -62,8 +62,6 @@ define("Template", ["jquery", "underscore"], function (jQuery, _) {
       if (typeof target === "undefined")
         target = '.app.app-main';
 
-      console.log(this.data);
-
       $(target).append(
         self.compiled(this.data)
       );

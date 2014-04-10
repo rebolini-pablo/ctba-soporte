@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="pane full row">
+    <table class="table table-striped ticket-list">
+      <thead>
+        <tr>
+          <td>#</td>
+          <td>Descripción</td>
+          <td>Sistema</td>
+          <td>Modulo</td>
+          <td>Creado</td>
+          <td>Estado</td>
+          <td>Acciones</td>
+        </tr>
+      </thead>
+
+      <% _.each(app, function(ticket) { %>
+        <tr>
+          <td><%- ticket.id %></td>
+          <td><%- ticket.description.substr(0, 25) %> ...</td>
+          <td><%- ticket.system_id %></td>
+          <td><%- ticket.module_id %></td>
+          <td><%- ticket.created_at %></td>
+          <td>
+            <% if (ticket.status == 0) { %>
+              <span class="label label-important">Abierto</span>
+            <% } else if (ticket.status == 1) { %>
+              <span class="label label-warning">En progreso</span>
+            <% } else if (ticket.status == 2) { %>
+              <span class="label label-success">Cerrado</span>
+            <% } %>
+          </td>
+          <td>
+            <a class="btn" href="<%- _base_url %>ticket/<%- ticket.id %>"><i class="fa fa-eye"></i></a>
+
+            <% if (_user_type === "admin") { %>
+              <a class="btn js-resolve-ticket" data-id="<%- ticket.id %>"><i class="fa fa-flash"></i></a>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>      
+    </table>
+
+    <a class="btn pull-right" href="<%- _base_url %>ticket/create"><i class="fa fa-pencil"></i>&nbsp;Crear</a>
+
+  </div>
+</div>

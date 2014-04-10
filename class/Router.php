@@ -2,6 +2,7 @@
 
 /**
  * @author http://upshots.org/php/php-seriously-simple-router
+ * @todo Añadir filtros
  */
 class Router {
     

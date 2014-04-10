@@ -9,7 +9,7 @@ define('Helper', ['jquery', 'Message'], function (jQuery, Message) {
       "use strict";
 
       var promise
-      ,     formData = new FormData(object);
+      ,   formData = new FormData(object);
       
       promise = jQuery.ajax({
         type: object.method,
@@ -30,7 +30,16 @@ define('Helper', ['jquery', 'Message'], function (jQuery, Message) {
           jQuery('.js-async-loader').remove();
 
           if (Message.hasOwnProperty(status))
-            return Message[status](message);
+            Message[status](message);
+
+          if (data.hasOwnProperty('redirect'))
+            return document.location.href = _base_url + data.redirect;
+
+          //  No es necesario aun
+          // if (data.hasOwnProperty('callback')) {
+          //   var callback = data.callback;
+          //   return callback();
+          // }
         },
 
         beforeSend: function () {

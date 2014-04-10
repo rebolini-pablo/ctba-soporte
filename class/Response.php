@@ -20,4 +20,11 @@ class Response {
 
     return json_encode($data);
   }
+
+  public static function redirect ($to) {
+    $base = Config::get('app', 'url');
+
+    if (substr($to, 0, 1) === '/')
+      return header ("Location: {$base}{$to}");
+  }
 }

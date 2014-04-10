@@ -1,25 +1,31 @@
 <div class="container">
   <div class="pane row">
     <div class="span2 pull-left">
-      <% if (typeof app.screenshot !== null) { %>     
-        <img src="/uploads/<%- app.screenshot %>" />
+      <% if (typeof app.screenshot === "string") { %>     
+        <img src="<%- _base_url %>/uploads/<%- app.screenshot %>" />
+      <% } else { %>
+        <img src="http://placehold.it/140x140/99FF00/000000&text=Sin+Imagen">
       <% } %>
     </div>
+       
     <div class="span4 pull-right">
       <ul class="ticket-detail">
-        <li class="title">Ticket #<%- app.id %></li>
+        <li class="title">
+          Ticket #<%- app.id %>
+          <% if (app.status == 0) { %>
+            <span class="label label-important pull-right">Abierto</span>
+          <% } else if (app.status == 1) { %>
+            <span class="label label-warning pull-right">En progreso</span>
+          <% } else if (app.status == 2) { %>
+            <span class="label label-success pull-right">Cerrado</span>
+          <% } %>
+        </li>
         <li class="created pull-right"><%- app.created_at %></li>
         <li class="desc"><%- app.description %></li>
         <li>Modulo: <%- app.module_id %></li>
         <li>Sistema: <%- app.system_id %></li>
-        <li class="status">Estado
-          <% if (app.status == 0) { %>
-            <span class="label label-important">Abierto</span>
-          <% } else if (app.status == 1) { %>
-            <span class="label label-warning">En progreso</span>
-          <% } else if (app.status == 2) { %>
-            <span class="label label-success">Cerrado</span>
-          <% } %>
+        <li class="status">
+          <a class="btn btn-link pull-right" href="<%- _base_url %>tickets">Volver</a> 
         </li>
       </ul>
     </div>
